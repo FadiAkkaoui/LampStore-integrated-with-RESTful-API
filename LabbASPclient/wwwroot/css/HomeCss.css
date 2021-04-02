@@ -1,0 +1,29 @@
+﻿.hero {
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+    .hero img {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+    }
+.headline2 {
+    margin-top: 100px;
+    position: fixed;
+    left: 56%;
+    top: 43%;
+    font-size: 60px;
+    transform: translate(-20%,-70%);
+    color: yellow;
+    text-transform: uppercase;
+    font-family: 'B612', sans-serif;
+}
+@media screen and (max-width:768px) {
+    .headline2 {
+        margin-top: 150px;
+        font-size: 30px;
+        left: 60%;
+        top:15%;
+    }
+}

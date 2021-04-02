@@ -1,0 +1,33 @@
+﻿@model LabbASPclient.Models.Kategori
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" type="text/css" href="~/css/DetailsCss.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:ital@1&display=swap" rel="stylesheet">
+<br />
+<br />
+<h1>Kategorinsdetaljer</h1>
+<br />
+<div>
+    <hr />
+    <table class="table table-dark table-hover">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Kategorinamn
+            </th>
+        </tr>
+        <tbody>
+        <td>@Html.DisplayFor(model => model.KategoriId)</td>
+        <td>@Html.DisplayFor(model => model.Kategorinamn)</td>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a class="a" asp-action="Edit" asp-route-id="@Model.KategoriId">Ändra</a> |
+    <a class="a" asp-action="Index">Tillbaka till listan</a>
+</div>

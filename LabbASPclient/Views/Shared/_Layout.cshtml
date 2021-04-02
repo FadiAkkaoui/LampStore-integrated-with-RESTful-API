@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lampaffär</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/NyCss.css">
+</head>
+<body style="background-color: #3D9970">
+    <nav>
+        <div class="logo">
+            <img src="~/Bild/t.svg" width="30" height="30" alt="" loading="lazy">
+            Lampor
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="~/Home/Index">Hem</a>
+            </li>
+            <li>
+                <a href="~/Artiklars/Index">Artiklar</a>
+            </li>
+            <li>
+                <a href="~/Kategoris/Index">Kategorier</a>
+            </li>
+            <li>
+                <a href="~/API/Index">API</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <header />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site2.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+﻿@model LabbASPclient.Models.Artiklar
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" type="text/css" href="~/css/CreateCSS.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:ital@1&display=swap" rel="stylesheet">
+<h1>Skapa artikel</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Produktnamn" class="control-label"></label>
+                <input asp-for="Produktnamn" class="form-control" />
+                <span asp-validation-for="Produktnamn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produktbeskrivning" class="control-label"></label>
+                <input asp-for="Produktbeskrivning" class="form-control" />
+                <span asp-validation-for="Produktbeskrivning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tillverkare" class="control-label"></label>
+                <input asp-for="Tillverkare" class="form-control" />
+                <span asp-validation-for="Tillverkare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pris" class="control-label"></label>
+                <input asp-for="Pris" class="form-control" />
+                <span asp-validation-for="Pris" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Antal" class="control-label"></label>
+                <input asp-for="Antal" class="form-control" />
+                <span asp-validation-for="Antal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriId" class="control-label"></label>
+                <select asp-for="KategoriId" class="form-control" asp-items="ViewBag.KategoriId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Skapa" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="a" asp-action="Index">Tillbaka till listan</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

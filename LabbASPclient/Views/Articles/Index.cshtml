@@ -1,0 +1,72 @@
+﻿@model IEnumerable<LabbASPclient.Models.Artiklar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" type="text/css" href="~/css/ArtiklarsCss.css">
+<link rel="stylesheet" type="text/css" href="~/css/Button.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:ital@1&display=swap" rel="stylesheet">
+<br />
+<br />
+<h1>Artiklar</h1>
+<br />
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produktnamn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produktbeskrivning)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tillverkare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pris)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Antal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategorinamn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produktnamn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produktbeskrivning)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tillverkare)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pris)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Antal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kategorinamn.Kategorinamn)
+                </td>
+                <td>
+                    <a class="b" asp-action="Edit" asp-route-id="@item.Id">Ändra</a> |
+                    <a class="b" asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |
+                    <a class="b" asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a class="button" asp-action="Create">Skapa ny artikel</a>
+</p>
